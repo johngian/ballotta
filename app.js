@@ -1,6 +1,7 @@
-var http = require('http');
 var express = require('express.io');
-var app = express();
+var app = express()
+
+app.http().io();
 
 //Setting the View
 app.set('view engine', 'jade');
@@ -9,6 +10,10 @@ app.set('views', 'templates');
 //Setting media path
 app.use('/static', express.static( 'static'));
 
-http.createServer(app).listen(3000, function() {
- console.log('App listening on http://localhost:3000');
+app.io.route('ready', function(req) {
+  req.io.emit('change', {
+    message: 'Sent event from :ready: route.'
+  });
 });
+
+app.listen(3000);
