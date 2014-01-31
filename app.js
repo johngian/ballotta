@@ -16,4 +16,9 @@ app.io.route('ready', function(req) {
   });
 });
 
+//View for Home page
+app.get('/', function(req, res) {
+ res.render('index');
+});
+
 app.listen(3000);
