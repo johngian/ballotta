@@ -2,4 +2,16 @@ doctype html
 html
   include head
 body
-  h1 Rangevote ftw
+  x-appbar
+    header rangevote.it
+    button.target-button ?
+    x-tooltip
+      p More info 
+        a(href="http://en.wikipedia.org/wiki/Range_voting") here
+  .call
+    p Simple and fast range voting
+  .create
+    input(type=text,  placeholder="Enter vote name to create")
+    button Create vote
+  .footer
+    .notices This is a legal and code blurb
