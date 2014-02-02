@@ -21,4 +21,6 @@ app.get('/', function(req, res) {
  res.render('index');
 });
 
-app.listen(3000);
+app.listen(3000, function(){
+	console.log('Server started on localhost:3000');
+});
